@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Stream File</title></head>
+<body>
+  <h2>Streaming from Telegram</h2>
+  <video id="player" controls autoplay width="80%"></video>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const fileUrl = urlParams.get("file_url");
+    if (fileUrl) {
+      document.getElementById("player").src = fileUrl;
+    } else {
+      document.body.innerHTML += "<p>No file_url provided.</p>";
+    }
+  </script>
+</body>
+</html>
